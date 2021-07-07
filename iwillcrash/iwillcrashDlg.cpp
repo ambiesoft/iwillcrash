@@ -4,6 +4,10 @@
 
 #include "pch.h"
 #include "framework.h"
+
+#include "../../lsMisc/GetVersionString.h"
+#include "../../lsMisc/stdosd/stdosd.h"
+
 #include "iwillcrash.h"
 #include "iwillcrashDlg.h"
 #include "afxdialogex.h"
@@ -12,6 +16,8 @@
 #define new DEBUG_NEW
 #endif
 
+using namespace Ambiesoft;
+using namespace Ambiesoft::stdosd;
 
 // CAboutDlg dialog used for App About
 
@@ -100,7 +106,11 @@ BOOL CiwillcrashDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	// TODO: Add extra initialization here
+	CString strTitle;
+	strTitle.Format(L"%s v%s",
+		AfxGetAppName(),
+		GetVersionString(stdGetModuleFileName().c_str(), 3).c_str());
+	SetWindowText(strTitle);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
