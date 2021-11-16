@@ -11,11 +11,11 @@ using namespace System::Security::Permissions;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly:AssemblyTitleAttribute("skelton2019")];
+[assembly:AssemblyTitleAttribute("iwillcrashcppclr")];
 [assembly:AssemblyDescriptionAttribute("")];
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("")];
-[assembly:AssemblyProductAttribute("skelton2019")];
+[assembly:AssemblyProductAttribute("iwillcrashcppclr")];
 [assembly:AssemblyCopyrightAttribute("Copyright (c)  2017")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];

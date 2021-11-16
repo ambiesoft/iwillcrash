@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include "Form1.h"
 
-using namespace skelton2019;
+using namespace iwillcrashcppclr;
 
 [STAThreadAttribute]
 int main(array<System::String ^> ^args)

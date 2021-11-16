@@ -1,7 +1,7 @@
 #pragma once
 
 
-namespace skelton2019 {
+namespace iwillcrashcppclr {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -41,9 +41,11 @@ namespace skelton2019 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ txtTarget;
+	private: System::Windows::Forms::Button^ btnAccessToNull;
 	protected:
-	private: System::Windows::Forms::TextBox^ txtInput;
+
+	protected:
+
 
 	private:
 		/// <summary>
@@ -58,49 +60,33 @@ namespace skelton2019 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->txtTarget = (gcnew System::Windows::Forms::TextBox());
-			this->txtInput = (gcnew System::Windows::Forms::TextBox());
+			this->btnAccessToNull = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// txtTarget
+			// btnAccessToNull
 			// 
-			this->txtTarget->Location = System::Drawing::Point(54, 170);
-			this->txtTarget->Multiline = true;
-			this->txtTarget->Name = L"txtTarget";
-			this->txtTarget->ReadOnly = true;
-			this->txtTarget->Size = System::Drawing::Size(790, 117);
-			this->txtTarget->TabIndex = 0;
-			// 
-			// txtInput
-			// 
-			this->txtInput->Location = System::Drawing::Point(54, 21);
-			this->txtInput->Multiline = true;
-			this->txtInput->Name = L"txtInput";
-			this->txtInput->Size = System::Drawing::Size(790, 99);
-			this->txtInput->TabIndex = 1;
-			this->txtInput->TextChanged += gcnew System::EventHandler(this, &Form1::txtInput_TextChanged);
+			this->btnAccessToNull->Location = System::Drawing::Point(12, 64);
+			this->btnAccessToNull->Name = L"btnAccessToNull";
+			this->btnAccessToNull->Size = System::Drawing::Size(212, 23);
+			this->btnAccessToNull->TabIndex = 0;
+			this->btnAccessToNull->Text = L"&Access to null pointer";
+			this->btnAccessToNull->UseVisualStyleBackColor = true;
+			this->btnAccessToNull->Click += gcnew System::EventHandler(this, &Form1::btnAccessToNull_Click);
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(882, 315);
-			this->Controls->Add(this->txtInput);
-			this->Controls->Add(this->txtTarget);
+			this->ClientSize = System::Drawing::Size(882, 341);
+			this->Controls->Add(this->btnAccessToNull);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
-			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void txtInput_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		txtTarget->Text = txtInput->Text;
-	}
-	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
-		System::Drawing::Font^ font = gcnew System::Drawing::Font("Meiryo UI", 15.75, System::Drawing::FontStyle::Regular);
-		txtTarget->Font = font;
+	private: System::Void btnAccessToNull_Click(System::Object^ sender, System::EventArgs^ e) {
+		*(int*)0 = 1;
 	}
 	};
 }

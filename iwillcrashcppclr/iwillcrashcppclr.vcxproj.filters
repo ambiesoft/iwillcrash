@@ -21,7 +21,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="skelton2019.cpp">
+    <ClCompile Include="iwillcrashcppclr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
