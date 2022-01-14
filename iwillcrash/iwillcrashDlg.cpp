@@ -165,9 +165,8 @@ HCURSOR CiwillcrashDlg::OnQueryDragIcon()
 }
 
 
-
 void CiwillcrashDlg::OnBnClickedButtonNullpointeraccess()
 {
-	int* iZero = (int*)atoi("0");
+	int* iZero = reinterpret_cast<int*>((long long)atoi("0"));
 	*iZero = 0;
 }
